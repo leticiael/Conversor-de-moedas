@@ -17,15 +17,16 @@ class HttpRequest
             try {
                 $data = json_decode($response_json);
                 if ('success' === $data->result) {
-                
+              
                 $BRL = round($valuecoin * $data->conversion_rates->$TARGET_CURRENCY, 2);
                 $EUR = round($valuecoin * $data->conversion_rates->EUR, 2);
                 $GBP = round($valuecoin * $data->conversion_rates->GBP, 2);
                 $JPY = round($valuecoin * $data->conversion_rates->JPY, 2);
 
                 $coins = array('BRL' => $BRL, 'EUR' => $EUR, 'GBP' => $GBP, 'JPY' => $JPY);
-                  
                 return $coins;
+               
+               
                 }else{
                 return  ['message' => 'Não foi possivel conveter']; 
                 }

@@ -28,11 +28,9 @@ public function convert(){
         $valueCoin = json_decode($formData['moeda'], true);
     
         $data = HttpRequest::convertCoins($this->response, $valueCoin);
-        return $this->view->render($this->response, 'index.twig', [
-            'data' => $data
-        ]);
+       
+        return $this->view->render($this->response, 'index.twig', ['data' => $data, 'valuecoin' => $valueCoin]);
     } catch (\Throwable $e) {
-      
         return Header::validateRequest($this->response, '500', $e->getMessage());
     }
     }
