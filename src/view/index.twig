@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{{include('template/header/header.twig')}}
+	</head>
+	<body>
+
+		<div class="container">
+			{% block content %}
+				<div class="row">
+					<div class="col-md-4 col-sm-6 col-lg-6">
+						<img src="/public/img/womanread.png"  class="img-fluid" alt="...">
+					</div>
+
+					<div class="col-md-8  col-sm-6 col-lg-6 mt-5">
+						<h1>Principais cotações do dia</h1>
+						<form action="/convert" method="POST" class="d-flex justify-content-center align-itens-center">
+							<input type="submit" value="Converter" class="btn-md ">
+							<input name="moeda" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" required="obrigatorio">
+						</form>
+					</div>
+				</div>
+
+				<div class="row">
+
+			{% if data is empty %}
+					<div class="col-md-6  col-sm-12 col-lg-3">
+						<h3>CONVERT ($)</h3>
+							<p><span></span>BRL R$1,00 equivale  list</p><span>USD ($)</span>
+					</div>
+					<div class="col-md-6  col-sm-12 col-lg-3">
+						<h3>CONVERT ($)</h3>
+							<p><span></span>BRL R$1,00 equivale  list</p><span>USD ($)</span>
+					</div>
+
+					<div class="col-md-6  col-sm-12 col-lg-3">
+						<h3>CONVERT ($)</h3>
+							<p><span></span>BRL R$1,00 equivale  list</p><span>USD ($)</span>
+					</div>
+
+					<div class="col-md-6  col-sm-12 col-lg-3">
+						<h3>CONVERT ($)</h3>
+							<p><span></span>BRL R$1,00 equivale  list</p><span>USD ($)</span>
+					</div>
+				{%  else %}
+					{% for currency, value in data %}
+					<div class="col-md-6  col-sm-12 col-lg-3">
+						<h3>CONVERT {{currency}}($)</h3>
+							<p><span></span>BRL R$1,00 equivale a</p><span>USD {{value}} {{currency}} ($)</span>
+					</div>
+					{% endfor %}
+
+			{% endif %}
+				</div>
+
+			{% endblock %}
+			<div class="row">
+				<div class="col-md-12">
+					{{ include('template/footer/footer.twig')}}
+				</col>
+			</div>
+		</div>
+	
+	
+	</body>
+</html>
