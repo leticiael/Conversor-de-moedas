@@ -6,52 +6,61 @@
 	<body>
 
 			{% block content %}
-		<div class="container-fluid">
+		<div class="container mt-5">
 				<div class="row">
-					<div class="col-md-4 col-sm-6 col-lg-6">
-						<img src="/public/img/womanread.png"  class="img" alt="...">
+					<div class="col-md-4 col-sm-12 col-lg-6">
+						<img src="/public/img/womanread.png"  class="img-fluid" alt="...">
 					</div>
 
-					<div class="col-md-8  col-sm-6 col-lg-6 mt-5">
-						<h1>Principais cotações do dia</h1>
-						<form action="/convert" method="POST" class="d-flex justify-content-center align-itens-center">
-							<input type="submit" value="Converter" class="btn-md ">
+					<div class="col-md-8  col-sm-12 col-lg-6">
+						<h1 class="d-flex">Principais cotações do dia</h1>
+						<form action="/convert" method="POST">
+						<div class="mb-1 row">
+							<div class="col-sm-12 col-md-12">
 							<input name="moeda" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" required="obrigatorio">
+							</div>
+						</div>
+						
+						<div class="mb-1 row">
+							<div class="col-sm-12 col-md-12 col-lg-12 d-flex">
+							<input type="submit" value="Converter" class="btn-md">
+							</div>
+						</div>
 						</form>
 					</div>
 
 				</div>
 
+
 				<div class="row">
+					{% if data is empty %}
+							<div class="col-md-6  col-sm-6 col-lg-3">
+								<h3>CONVERT ($)</h3>
+									<p><span></span>BRL R$1,00 equivale  list</p><span>USD ($)</span>
+							</div>
+							<div class="col-md-6  col-sm-6 col-lg-3">
+								<h3>CONVERT ($)</h3>
+									<p><span></span>BRL R$1,00 equivale  list</p><span>USD ($)</span>
+							</div>
 
-			{% if data is empty %}
-					<div class="col-md-6  col-sm-6 col-lg-3">
-						<h3>CONVERT ($)</h3>
-							<p><span></span>BRL R$1,00 equivale  list</p><span>USD ($)</span>
-					</div>
-					<div class="col-md-6  col-sm-6 col-lg-3">
-						<h3>CONVERT ($)</h3>
-							<p><span></span>BRL R$1,00 equivale  list</p><span>USD ($)</span>
-					</div>
+							<div class="col-md-6  col-sm-6 col-lg-3">
+								<h3>CONVERT ($)</h3>
+									<p><span></span>BRL R$1,00 equivale  list</p><span>USD ($)</span>
+							</div>
 
-					<div class="col-md-6  col-sm-6 col-lg-3">
-						<h3>CONVERT ($)</h3>
-							<p><span></span>BRL R$1,00 equivale  list</p><span>USD ($)</span>
-					</div>
+							<div class="col-md-6  col-sm-6 col-lg-3">
+								<h3>CONVERT ($)</h3>
+									<p><span></span>BRL R$1,00 equivale  list</p><span>USD ($)</span>
+							</div>
+						{%  else %}
+							{% for currency, value in data %}
+							<div class="col-md-6  col-sm-12 col-lg-3">
+								<h3>CONVERT {{currency}}($)</h3>
+									<p><span></span>BRL R${{valuecoin}} equivale a</p><span> {{value}}({{currency}})</span>
+							</div>
+							{% endfor %}
 
-					<div class="col-md-6  col-sm-6 col-lg-3">
-						<h3>CONVERT ($)</h3>
-							<p><span></span>BRL R$1,00 equivale  list</p><span>USD ($)</span>
-					</div>
-				{%  else %}
-					{% for currency, value in data %}
-					<div class="col-md-6  col-sm-12 col-lg-3">
-						<h3>CONVERT {{currency}}($)</h3>
-							<p><span></span>{{currency}} {{valuecoin}} equivale a</p><span>USD {{value}}($)</span>
-					</div>
-					{% endfor %}
-
-			{% endif %}
+					{% endif %}
 				</div>
 
 			{% endblock %}

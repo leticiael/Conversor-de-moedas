@@ -23,7 +23,7 @@ class HttpRequest
                 $GBP = round($valuecoin * $data->conversion_rates->GBP, 2);
                 $JPY = round($valuecoin * $data->conversion_rates->JPY, 2);
 
-                $coins = array('BRL' => $BRL, 'EUR' => $EUR, 'GBP' => $GBP, 'JPY' => $JPY);
+                $coins = array('USD' => $BRL, 'EUR' => $EUR, 'GBP' => $GBP, 'JPY' => $JPY);
                 return $coins;
                
                

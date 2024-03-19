@@ -25,8 +25,8 @@ public function home(){
 public function convert(){
     try {
         $formData = $this->request->getParsedBody();
-        $valueCoin = json_decode($formData['moeda'], true);
-    
+        $valueCoin =$formData['moeda'];
+
         $data = HttpRequest::convertCoins($this->response, $valueCoin);
        
         return $this->view->render($this->response, 'index.twig', ['data' => $data, 'valuecoin' => $valueCoin]);
