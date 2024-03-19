@@ -34,7 +34,7 @@ Este projeto é uma aplicação web com duas funcionalidades principais: a conve
 - É nescessário criar uma conta para obter as credencials e colocar no arquivo (.env) que você deverá criar em seu projeto dentro da pasta raiz.
 - exemplo .env:
 
-# CONNECTION DATA BASE
+## CONNECTION DATA BASE
 - MYSQL_DRIVER = seu_drive
 - MYSQL_HOST = localhost
 - MYSQL_PORT = 3306
@@ -46,6 +46,14 @@ Este projeto é uma aplicação web com duas funcionalidades principais: a conve
 - ARGET_CURRENCY  = USD
 - BASE_URL = https://v6.exchangerate-api.com/v6/
 - API_KEY= sua_key
+
+
+## INSTALL COMPOSER 
+- Faça o download do composer para baixar as dependecias do projeto no link abaixo:
+- https://getcomposer.org/download/
+- apos instalat o composer entra no projeto e executar o comando:
+- composer install.
+
 
 ## Como Usar
 
