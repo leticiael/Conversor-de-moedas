@@ -73,9 +73,6 @@ Este projeto é uma aplicação web com duas funcionalidades principais: a conve
    **Página de Conversão**
    ![Página de Conversão](public/img/pagina_home.png)
 
-   **Página de Cotações**
-   ![Página de Cotações](src/img/paginacotacao.png)
-
 ## Configuração Necessária
 
 - É necessário possuir um servidor PHP para rodar a aplicação exemplo wamp server.
