@@ -42,10 +42,15 @@ Este padrão é útil para criar aplicações separando as responsabilidades do 
 Exemplo `.env`:
 
 MYSQL_DRIVER = seu_drive
+
 MYSQL_HOST = localhost
+
 MYSQL_PORT = 3306
+
 MYSQL_DATABASE = data_teste
+
 MYSQL_USER = root
+
 MYSQL_PASSWORD =
 
 BASE_CURRENCY = BRL
