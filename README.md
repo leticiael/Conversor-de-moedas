@@ -49,12 +49,13 @@ MYSQL_USER = root
 MYSQL_PASSWORD =
 
 BASE_CURRENCY = BRL
+
 TARGET_CURRENCY = USD
+
 BASE_URL = https://v6.exchangerate-api.com/v6/
+
 API_KEY = sua_key
 
-markdown
-Copy code
 
 ## Instalação
 
